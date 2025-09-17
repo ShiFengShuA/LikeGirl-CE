@@ -4,7 +4,7 @@
 
 ### 原项目地址与作者
 - 原创作者: Ki.
-- https://gitee.com/kiCode111/like-girl-v5.2.0
+- 原项目地址: https://gitee.com/kiCode111/like-girl-v5.2.0
 
 ### 原作者声明：
 
