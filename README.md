@@ -15,7 +15,7 @@
 
 ————————
 
-#社区版简介：
+# 社区版简介：
 
 - 原创作者: Ki.
 - 原项目地址: https://gitee.com/kiCode111/like-girl-v5.2.0
