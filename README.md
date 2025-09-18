@@ -50,11 +50,14 @@
 
 - 打开根目录下的`DB`文件夹
 - `LikeGirl-CE_DB.sql.sql`与`love_db.sql` 为SQL文件 选择其中`一个`导入到数据库中即可
--  `LikeGirl-CE_DB.sql`是社区版的数据库文件 后台登录密码为 `LikeGirlCE`
--  `love_db.sql`是官方版的数据库文件 理论上能兼容 后台登录密码为 `love2025`
-- 默认账号密码：`admin`/`love2025`或者`admin`/`LikeGirlCE`
+- `LikeGirl-CE_DB.sql`是社区版的数据库文件 后台登录密码为 `LikeGirlCE`
+- `love_db.sql`是官方版的数据库文件 理论上能兼容 后台登录密码为 `love2025`
+- 默认账号：admin
+- 默认密码：`love2025`或`LikeGirlCE`
 
-————————
+## 版权与声明
+- 保留原作者署名与项目地址：https://gitee.com/kiCode111/likegirl-stable
+- 原项目已声明停止维护；本仓库为社区维护版本，仅提供修复与二创，不承担由此引发的任何风险或责任
 
 ## 更新日志：
 
