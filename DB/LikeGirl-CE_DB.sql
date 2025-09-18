@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost:3306
--- 生成日期： 2025-09-18 22:34:22
+-- 生成日期： 2025-09-18 23:15:09
 -- 服务器版本： 5.6.51
 -- PHP 版本： 7.4.33
 
@@ -76,6 +76,13 @@ CREATE TABLE `article` (
   `articlename` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- 转存表中的数据 `article`
+--
+
+INSERT INTO `article` (`id`, `articletext`, `articletime`, `articletitle`, `articlename`) VALUES
+(3, '<quote>引用内容样式</quote>\n\n<hr>\n\n\n<h1>H1文字大小演示</h1>\n\n<hr>\n\n\n<h2>H2文字大小演示</h2>\n\n<hr>\n\n\n<h3>H3文字大小演示</h3>\n\n<hr>\n\n\n<h4>H4文字大小演示</h4>\n\n<hr>\n\n\n<h5>H5文字大小演示</h5>\n\n<hr>\n\n\n<h6>H6文字大小演示</h6>\n\n<hr>\n\n\n<b>加粗字体</b>\n<s>删除线字体</s>\n<i>斜体</i>\n<code>强调内容</code>\n\n<center>文本居中</center>\n\n\n<!--分割线-->\n<hr>\n<quote>插入图片</quote>\n<img alt=\"\" src=\"https://lovey.kikiw.cn/Style/img/Cover.webp\">\n<!--分割线-->\n<hr>\n<quote>插入视频</quote>\n\n<video src=\"https://classpic.kikiw.cn/video/fengjing.mp4\" controls></video>\n\n<!--分割线-->\n<hr>', '2025-09-18', '默认文章语法', '测试男主');
+
 -- --------------------------------------------------------
 
 --
@@ -97,6 +104,20 @@ CREATE TABLE `diySet` (
 
 INSERT INTO `diySet` (`id`, `headCon`, `footerCon`, `cssCon`, `Pjaxkg`, `Blurkg`) VALUES
 (1, '', '', '', '1', '1');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `IPerror`
+--
+
+CREATE TABLE `IPerror` (
+  `id` int(11) NOT NULL,
+  `ipAdd` varchar(100) NOT NULL COMMENT 'ip归属地',
+  `Time` varchar(200) NOT NULL COMMENT '时间',
+  `State` text NOT NULL COMMENT '拉黑ip',
+  `text` varchar(100) NOT NULL COMMENT '备注'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -366,6 +387,12 @@ ALTER TABLE `diySet`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 表的索引 `IPerror`
+--
+ALTER TABLE `IPerror`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 表的索引 `leaving`
 --
 ALTER TABLE `leaving`
@@ -421,13 +448,19 @@ ALTER TABLE `about`
 -- 使用表AUTO_INCREMENT `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- 使用表AUTO_INCREMENT `diySet`
 --
 ALTER TABLE `diySet`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- 使用表AUTO_INCREMENT `IPerror`
+--
+ALTER TABLE `IPerror`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用表AUTO_INCREMENT `leaving`
