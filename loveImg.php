@@ -12,12 +12,12 @@ $resImg = mysqli_query($connect, $loveImg);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $text['title'] ?> — 恋爱相册</title>
+    <script src="Style/js/loveImg.js?LikeGirl=<?php echo $version ?>" defer></script>
 </head>
 
 <body>
     <div id="pjax-container">
         <h4 class="text-ce central fade-in">记录下你的最美瞬间</h4>
-        <h4 style="text-align: center;" class="text-comment fade-in">为防止爬虫爬取图片 每个窗口首次访问时请刷新该页面</h4>
         <div class="album-container">
             <?php
             $index = 0;
@@ -83,179 +83,6 @@ $resImg = mysqli_query($connect, $loveImg);
         </div>
     </div>
     
-    <?php
-    include_once 'footer.php';
-    ?>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-            const modalDescription = document.getElementById('modalDescription');
-            const modalDate = document.getElementById('modalDate');
-            const closeModal = document.getElementById('closeModal');
-            const prevArrow = document.getElementById('prevArrow');
-            const nextArrow = document.getElementById('nextArrow');
-            const modalThumbnailsContainer = document.getElementById('modalThumbnailsContainer');
-            
-            let currentImages = [];
-            let currentIndex = 0;
-            
-            // 初始化动画效果
-            function initAnimations() {
-                const photoItems = document.querySelectorAll('.photo-item');
-                photoItems.forEach(item => {
-                    item.classList.add('show');
-                });
-            }
-            
-            // 延迟加载动画
-            setTimeout(initAnimations, 100);
-            
-            // 绑定照片卡片点击事件
-            function bindPhotoCardEvents() {
-                document.querySelectorAll('.photo-card').forEach(card => {
-                    card.addEventListener('click', function(e) {
-                        // 检查是否点击的是缩略图
-                        const thumbnail = e.target.closest('.thumbnail-item');
-                        let clickedIndex = 0;
-                        
-                        if (thumbnail) {
-                            clickedIndex = Array.from(thumbnail.parentNode.children).indexOf(thumbnail);
-                        }
-                        
-                        const description = this.getAttribute('data-description');
-                        const date = this.getAttribute('data-date');
-                        const images = this.getAttribute('data-images').split(';').map(url => url.trim());
-                        
-                        currentImages = images.filter(url => url !== '');
-                        currentIndex = Math.min(clickedIndex, currentImages.length - 1);
-                        
-                        if (currentImages.length > 0) {
-                            // 显示加载中的模态框
-                            modal.style.display = 'flex';
-                            setTimeout(() => {
-                                modal.classList.add('show');
-                            }, 10);
-                            
-                            modalImage.classList.remove('loaded');
-                            
-                            // 预加载图片
-                            const loadImage = new Image();
-                            loadImage.src = currentImages[currentIndex];
-                            loadImage.onload = function() {
-                                modalImage.src = currentImages[currentIndex];
-                                modalImage.classList.add('loaded');
-                            };
-                            
-                            modalDescription.textContent = description;
-                            modalDate.textContent = date;
-                            
-                            // 创建缩略图
-                            modalThumbnailsContainer.innerHTML = '';
-                            currentImages.forEach((url, index) => {
-                                const thumbnail = document.createElement('img');
-                                thumbnail.src = url;
-                                thumbnail.className = 'modal-thumbnail' + (index === currentIndex ? ' active' : '');
-                                thumbnail.addEventListener('click', (e) => {
-                                    e.stopPropagation();
-                                    currentIndex = index;
-                                    updateModal();
-                                });
-                                modalThumbnailsContainer.appendChild(thumbnail);
-                            });
-                            
-                            document.body.style.overflow = 'hidden';
-                        }
-                    });
-                });
-            }
-            
-            // 初始绑定事件
-            bindPhotoCardEvents();
-            
-            // 关闭模态框
-            closeModal.addEventListener('click', function() {
-                modal.classList.remove('show');
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                }, 300);
-                document.body.style.overflow = 'auto';
-            });
-            
-            // 点击模态框背景关闭
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.classList.remove('show');
-                    setTimeout(() => {
-                        modal.style.display = 'none';
-                    }, 300);
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            // 上一张/下一张导航
-            prevArrow.addEventListener('click', function(e) {
-                e.stopPropagation();
-                if (currentImages.length > 1) {
-                    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-                    updateModal();
-                }
-            });
-            
-            nextArrow.addEventListener('click', function(e) {
-                e.stopPropagation();
-                if (currentImages.length > 1) {
-                    currentIndex = (currentIndex + 1) % currentImages.length;
-                    updateModal();
-                }
-            });
-            
-            // 键盘导航
-            document.addEventListener('keydown', function(e) {
-                if (modal.classList.contains('show')) {
-                    if (e.key === 'ArrowLeft') {
-                        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-                        updateModal();
-                    } else if (e.key === 'ArrowRight') {
-                        currentIndex = (currentIndex + 1) % currentImages.length;
-                        updateModal();
-                    } else if (e.key === 'Escape') {
-                        modal.classList.remove('show');
-                        setTimeout(() => {
-                            modal.style.display = 'none';
-                        }, 300);
-                        document.body.style.overflow = 'auto';
-                    }
-                }
-            });
-            
-            // 更新模态框显示
-            function updateModal() {
-                modalImage.classList.remove('loaded');
-                
-                const loadImage = new Image();
-                loadImage.src = currentImages[currentIndex];
-                loadImage.onload = function() {
-                    modalImage.src = currentImages[currentIndex];
-                    modalImage.classList.add('loaded');
-                };
-                
-                // 更新激活的缩略图
-                document.querySelectorAll('.modal-thumbnail').forEach((thumb, index) => {
-                    thumb.className = 'modal-thumbnail' + (index === currentIndex ? ' active' : '');
-                });
-            }
-            
-            // 初始化PJAX支持
-            if (typeof window.$ !== 'undefined' && typeof window.$.pjax === 'function') {
-                $(document).on('pjax:complete', function() {
-                    // 重新绑定事件
-                    bindPhotoCardEvents();
-                    initAnimations();
-                });
-            }
-        });
-    </script>
+    <?php include_once 'footer.php'; ?>
 </body>
 </html>

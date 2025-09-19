@@ -281,6 +281,7 @@ function loadPhotos() {
 <script src="../Style/pagelir/spotlight.bundle.js"></script>
 <script src="../Style/js/funlazy.min.js"></script>
 <script src="../Style/js/loading.js?LikeGirl=<?php echo $version ?>"></script>
+<script src="../Style/js/loveImg.js?LikeGirl=<?php echo $version ?>" defer></script>
 
 <?php
 echo htmlspecialchars_decode($diy['headCon'], ENT_QUOTES);
