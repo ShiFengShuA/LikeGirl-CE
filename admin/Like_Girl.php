@@ -178,7 +178,7 @@ $userstring = implode('', $userarray);
     <!-- 社区版简介 -->
     <div class="col-md-12">
         <div class="info-card">
-            <h4>Like Girl CE 情侣小站社区维护版 <span class="version-identifier">CE-1.0.0-Beta</span></h4>
+            <h4>Like Girl CE 情侣小站社区维护版 <span class="version-identifier">CE</span></h4>
             
             <p>基于LikeGirl v5.2.1版本维护以及二创更新</p>
             
