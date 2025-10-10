@@ -4,14 +4,13 @@ include_once 'Nav.php';
 ?>
 
 <div class="row">
-
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
                 <h4 class="header-title mb-3 size_18">新增事件</h4>
 
                 <form class="needs-validation" action="listaddPost.php" method="post" onsubmit="return check()"
-                      novalidate>
+                      novalidate enctype="multipart/form-data">
                     <div class="form-group mb-3">
                         <label for="validationCustom01">事件标题</label>
                         <input name="eventname" type="text" class="form-control" id="validationCustom01"
@@ -41,15 +40,20 @@ include_once 'Nav.php';
                                data-off-label="No"></label>
                     </div>
                     <div class="form-group mb-3" id="img_url">
-                        <label for="validationCustom01"></label>
-                        <input type="text" name="img" class="form-control" id="validationCustom01"
-                               placeholder="请输入图片地址（没有无需填写）" value="">
+                        <label for="validationCustom01">图片地址</label>
+                        <input type="text" name="imgurl" class="form-control" id="validationCustom01"
+                               placeholder="请输入图片地址(URL、绝对路径或相对路径)" value="">
+                        <small class="form-text text-muted">
+                            支持格式：<br>
+                            1. 完整URL (如：https://example.com/image.jpg)<br>
+                            2. 绝对路径 (如：/images/event.jpg)<br>
+                            3. 相对路径 (如：uploads/event.jpg)
+                        </small>
                     </div>
                     <div class="form-group mb-3 text_right">
                         <button class="btn btn-primary" type="button" id="listaddPost">提交修改</button>
                     </div>
                 </form>
-
             </div> <!-- end card-body-->
         </div> <!-- end card-->
     </div> <!-- end col-->
@@ -63,12 +67,10 @@ include_once 'Nav.php';
             return false;
         }
     }
-
 </script>
 
 <?php
 include_once 'Footer.php';
 ?>
-
 </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost:3306
--- 生成日期： 2025-09-18 23:15:09
+-- 生成日期： 2025-10-10 12:45:04
 -- 服务器版本： 5.6.51
 -- PHP 版本： 7.4.33
 
@@ -192,7 +192,7 @@ CREATE TABLE `loveImg` (
   `id` int(11) NOT NULL,
   `imgDatd` varchar(100) NOT NULL COMMENT '日期',
   `imgText` varchar(200) NOT NULL COMMENT '描述',
-  `imgUrl` varchar(16000) NOT NULL COMMENT '外链'
+  `imgUrl` varchar(16000) NOT NULL COMMENT '图片地址'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -220,7 +220,7 @@ CREATE TABLE `lovelist` (
   `id` int(11) NOT NULL,
   `icon` int(1) NOT NULL COMMENT '是否完成',
   `eventname` varchar(200) CHARACTER SET utf8mb4 NOT NULL COMMENT '事件内容',
-  `imgurl` varchar(300) COLLATE utf8_unicode_ci NOT NULL COMMENT '图片地址'
+  `imgurl` varchar(16000) COLLATE utf8_unicode_ci NOT NULL COMMENT '图片地址'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --

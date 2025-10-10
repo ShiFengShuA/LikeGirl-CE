@@ -36,8 +36,20 @@ $reslist = mysqli_query($connect, $lovelist);
                                 </li>
                                 <ul>
                                     <li>
-                                        <?php if ($list['imgurl']) { ?>
-                                            <img data-funlazy="<?php echo $list['imgurl']; ?>" alt="<?php echo $list['eventname']; ?>"> 
+                                        <?php if ($list['imgurl']) { 
+                                            // 判断图片路径类型
+                                            if (filter_var($list['imgurl'], FILTER_VALIDATE_URL)) {
+                                                // URL路径
+                                                $imgSrc = $list['imgurl'];
+                                            } elseif (strpos($list['imgurl'], '/') === 0) {
+                                                // 绝对路径
+                                                $imgSrc = $list['imgurl'];
+                                            } else {
+                                                // 相对路径
+                                                $imgSrc = './uploads/'.$list['imgurl'];
+                                            }
+                                        ?>
+                                            <img data-funlazy="<?php echo htmlspecialchars($imgSrc); ?>" alt="<?php echo htmlspecialchars($list['eventname']); ?>"> 
                                         <?php } ?>
                                     </li>
                                 </ul>
@@ -78,13 +90,10 @@ $reslist = mysqli_query($connect, $lovelist);
                     $(this).next("ul").slideToggle(500).siblings("ul").slideUp(500);
                 })
             })
-
         </script>
     </div>
     <?php
     include_once 'footer.php';
     ?>
-
 </body>
-
 </html>

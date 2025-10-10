@@ -9,17 +9,16 @@ $imgurl = $_GET['imgurl'];
 ?>
 
 <div class="row">
-
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title mb-3 size_18">修改事件—— <?php echo $name ?></h4>
+                <h4 class="header-title mb-3 size_18">修改事件—— <?php echo htmlspecialchars($name) ?></h4>
 
-                <form class="needs-validation" action="listupda.php" method="post" onsubmit="return check()" novalidate>
+                <form class="needs-validation" action="listupda.php" method="post" onsubmit="return check()" novalidate enctype="multipart/form-data">
                     <div class="form-group mb-3">
                         <label for="validationCustom01">事件标题</label>
                         <input type="text" name="eventname" class="form-control" id="validationCustom01"
-                               placeholder="请输入事件标题" value="<?php echo $name ?>" required>
+                               placeholder="请输入事件标题" value="<?php echo htmlspecialchars($name) ?>" required>
                     </div>
                     <script>
                         function myOnClickHandler(obj) {
@@ -48,19 +47,23 @@ $imgurl = $_GET['imgurl'];
                          style="display: <?php if ($icon) { ?> block<?php } else { ?>none<?php } ?>">
                         <label for="validationCustom01">图片地址</label>
                         <input type="text" name="imgurl" class="form-control" id="validationCustom01"
-                               placeholder="请输入图片地址（没有无需填写）" value="<?php echo $imgurl ?>">
+                               placeholder="请输入图片地址(URL、绝对路径或相对路径)" value="<?php echo htmlspecialchars($imgurl) ?>">
+                        <small class="form-text text-muted">
+                            支持格式：<br>
+                            1. 完整URL (如：https://example.com/image.jpg)<br>
+                            2. 绝对路径 (如：/images/event.jpg)<br>
+                            3. 相对路径 (如：uploads/event.jpg)
+                        </small>
                     </div>
                     <div class="form-group mb-3 text_right">
-                        <input name="id" value="<?php echo $id ?>" type="hidden">
+                        <input name="id" value="<?php echo htmlspecialchars($id) ?>" type="hidden">
                         <button class="btn btn-primary" type="button" id="listupda">提交修改</button>
                     </div>
                 </form>
-
             </div> <!-- end card-body-->
         </div> <!-- end card-->
     </div> <!-- end col-->
 </div>
-
 
 <script>
     function check() {
@@ -70,8 +73,6 @@ $imgurl = $_GET['imgurl'];
             return false;
         }
     }
-
-
 </script>
 <?php
 include_once 'Footer.php';

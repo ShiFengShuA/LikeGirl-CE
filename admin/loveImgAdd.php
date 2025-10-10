@@ -28,8 +28,13 @@ $inv_date = date("Y-m-d");
 
                     <div class="form-group mb-3" id="img_url">
                         <label for="validationCustom01">图片URL（多个URL用分号;分隔）</label>
-                        <textarea name="imgUrl" class="form-control" placeholder="请输入图片URL地址，多个URL用分号;分隔(可使用相对路径均,例如'./Style/img/Love-album/*****.png')" rows="3" required></textarea>
-                        <small class="form-text text-muted">每行一个URL或用分号;分隔多个URL(可使用相对路径均,例如'./Style/img/Love-album/*****.png')</small>
+                        <textarea name="imgUrl" class="form-control" placeholder="请输入图片地址(URL、绝对路径或相对路径)，多个图片地址用分号;分隔" rows="3" required></textarea>
+                        <small class="form-text text-muted">
+                            支持格式：<br>
+                            1. 完整URL (如：https://example.com/image.jpg)<br>
+                            2. 绝对路径 (如：/images/event.jpg)<br>
+                            3. 相对路径 (如：uploads/event.jpg)
+                        </small>
                     </div>
                     
                     <div class="form-group mb-3 text_right">
