@@ -47,7 +47,7 @@ $imgurl = $_GET['imgurl'];
                          style="display: <?php if ($icon) { ?> block<?php } else { ?>none<?php } ?>">
                         <label for="validationCustom01">图片地址</label>
                         <input type="text" name="imgurl" class="form-control" id="validationCustom01"
-                               placeholder="请输入图片地址(URL、绝对路径或相对路径)" value="<?php echo htmlspecialchars($imgurl) ?>">
+                               placeholder="请输入图片地址(URL、绝对路径或相对路径)(没有则无需填写)" value="<?php echo htmlspecialchars($imgurl) ?>">
                         <small class="form-text text-muted">
                             支持格式：<br>
                             1. 完整URL (如：https://example.com/image.jpg)<br>
