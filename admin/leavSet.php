@@ -125,9 +125,19 @@ if (!$result)
     }
 </style>
 <script>
+    document.addEventListener('click', function (e) {
+        let el = e.target.closest('.delete-btn');
+        if (!el) return;
+    
+        e.preventDefault();
+        let id = el.dataset.id;
+        let content = el.dataset.content;
+        del(id, content);
+    });
+    
     function del(id, text) {
         if (confirm('您确认要删除 ' + text + ' 内容吗')) {
-            location.href = 'delleav.php?id=' + id + '&text' + text;
+            location.href = 'delleav.php?id=' + id + '&text=' + text;
         }
     }
 </script>

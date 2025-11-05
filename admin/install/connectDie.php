@@ -14,13 +14,22 @@
  * @Message：开发不易 版权信息请保留 （删除/更改版权的无耻之人请勿使用 查到一个挂一个）
 -->
 
+<?php
+    include_once __DIR__ . '/../Config_DB.php';
+    
+    $connect = @mysqli_connect($db_address, $db_username, $db_password, $db_name);
+    if ($connect) {
+        mysqli_close($connect);
+        die("<script>location.href = '../login.php';</script>");
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
-    <meta charset="utf-8"/>
-    <title>数据库连接失败</title>
+    <meta charset="UTF-8">
+    <title>数据库配置</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Like Girl 5.2.1-Stable" name="description"/>
     <meta content="Coderthemes" name="author"/>
@@ -32,16 +41,16 @@
 </head>
 
 <style>
+    body {
+        line-height: 1;
+    }
+    
     .card {
         border-radius: 15px;
     }
 
     .card-header.pt-4.pb-4.text-center.bg-primary {
         border-radius: 15px 15px 0 0;
-    }
-
-    .bg-primary {
-        background-color: #e91e63 !important;
     }
 
     .btn-primary {
@@ -68,53 +77,49 @@
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="card">
-                    
                     <!-- Logo -->
                     <div class="card-header pt-4 pb-4 text-center bg-primary">
                         <a href="##">
-                                <span
-                                        style="color: #fff;font-size: 1.3rem;font-family: '宋体';font-weight: 700;">数据库连接失败</span>
+                            <span style="color: #fff;font-size: 1.2rem;">LikeGirl数据库配置</span>
                         </a>
                     </div>
-                    
+
                     <div class="card-body p-4">
-                    
-                        <div class="text-center w-75 m-auto">
-                            <h4 class="text-dark-50 text-center mt-0 font-weight-bold">Like Girl 5.2.1-CE</h4>
-                            <div class="info">请检查数据库信息是否配置正确<i style="color: #ff9b9b;"></i></div>
-                        </div>
-                        <div class="text-center w-75 m-auto" style="margin-bottom: 40px!important;">
-                            <img src="http://sfsa.mrgzs.top/repository/LikeGirl-CE/img/LikeGirl-CE-SQL-TiaoShi.png"
-                                 style="width: 100%;border-radius: 10px;box-shadow: 0 5px 12px #b9c7dc;" alt="">
-                        </div>
-                        <div class="text-center info">请在admin目录下找到Config_DB.php文件 并按图手动修改内容</div>
-                        <p class="text-center">(配置成功后可到admin目录下删除当前页面)</p>
-                        <p class="text-center">(如果是第一次安装 推荐使用在线配置)</p>
-                        <p class="text-center">(非第一次安装 请勿在线配置 否则数据库将被覆盖)</p>
-                        
-                        <div class="form-group mb-0 text-center">
-                            <a href="../admin/install/connectDie.php">
-                                <button
-                                        class="btn btn-primary" type="submit"> 开始在线配置
-                                </button>
-                            </a>
-                            
-                            <div class="mar_top">
-                                <a href="../admin">
-                                    <button
-                                            class="btn btn-success" type="submit"> 已配置成功点我跳转登录
-                                    </button>
-                                </a>
+                        <form method="post" action="install.php">
+                            <div class="form-group mb-3">
+                                <label>数据库地址 (默认即可)</label>
+                                <input type="text" name="db_address" class="form-control" value="localhost" required>
                             </div>
-                        </div>
-                        
+        
+                            <div class="form-group mb-3">
+                                <label>数据库用户名</label>
+                                <input type="text" name="db_username" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group mb-3">
+                                <label>数据库名称 (表名) (默认与用户名相同)</label>
+                                <input type="text" name="db_name" class="form-control" required>
+                            </div>
+        
+                            <div class="form-group mb-3">
+                                <label>数据库密码</label>
+                                <input type="text" name="db_password" class="form-control" required>
+                            </div>
+        
+                            <div class="form-group mb-4">
+                                <label>安全码 (建议设置复杂一些)</label>
+                                <input type="text" name="like_code" class="form-control" placeholder="选填">
+                            </div>
+        
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">保存配置</button>
+                            </div>
+                        </form>
                     </div> <!-- end card-body -->
                 </div>
                 <!-- end card -->
-                
             </div>
             <!-- end row -->
-            
         </div> <!-- end col -->
     </div>
     <!-- end row -->
@@ -127,8 +132,8 @@
     Copyright © 2022 Ki. && <a href="https://blog.kikiw.cn/index.php/archives/24/" target="_blank">Like_Girl</a> All
     Rights Reserved.
 </footer>
-<script src="../Style/jquery/jquery.min.js"></script>
-<script src="../Style/pagelir/spotlight.bundle.js"></script>
+<script src="/Style/jquery/jquery.min.js"></script>
+<script src="/Style/pagelir/spotlight.bundle.js"></script>
 <script>
     $(function () {
         $("img[src$=jpg],img[src$=gif],img[src$=JPG],img[src$=png],img[src$=jpeg]").addClass("spotlight").each(function () {
@@ -143,4 +148,3 @@
 </body>
 
 </html>
-
