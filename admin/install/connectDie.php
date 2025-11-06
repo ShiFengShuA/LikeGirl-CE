@@ -87,7 +87,7 @@
                     <div class="card-body p-4">
                         <form method="post" action="install.php">
                             <div class="form-group mb-3">
-                                <label>数据库地址 (默认即可)</label>
+                                <label>数据库地址 (默认即可) (Docker端则修改为db)</label>
                                 <input type="text" name="db_address" class="form-control" value="localhost" required>
                             </div>
         
@@ -97,7 +97,7 @@
                             </div>
                             
                             <div class="form-group mb-3">
-                                <label>数据库名称 (表名) (默认与用户名相同)</label>
+                                <label>数据库名称 (表名) (默认与用户名相同 Docker端除外)</label>
                                 <input type="text" name="db_name" class="form-control" required>
                             </div>
         

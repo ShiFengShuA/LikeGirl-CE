@@ -89,7 +89,7 @@
                         </div>
                         <div class="text-center info">请在admin目录下找到Config_DB.php文件 并按图手动修改内容</div>
                         <p class="text-center">(配置成功后可到admin目录下删除当前页面)</p>
-                        <p class="text-center">(如果是第一次安装 推荐使用在线配置)</p>
+                        <p class="text-center">(如果是第一次安装或者是Docker用户 推荐使用在线配置)</p>
                         <p class="text-center">(非第一次安装 请勿在线配置 否则数据库将被覆盖)</p>
                         
                         <div class="form-group mb-0 text-center">
