@@ -65,7 +65,8 @@
 - ————————
 - 3.新增Docker本地部署包，相比于Docker镜像，使用图片相对路径更容易 
 - (文件 LikeGirl-CE-1.0.3-Docker-PS.zip)
-- (Docker本地部署包需解压后，在解压目录下使用终端执行 `docker-compose up -d` 命令)
+- (Docker本地部署包需解压后，在解压目录下使用终端执行 `docker-compose up -d` 命令，运行后会自动安装所需环境以及 `phpMyAdmin` )
+- (MySQL数据库用户名和密码等，请解压后在 `docker-compose.yml` 文件中自行修改)
 - (由于使用镜像挂载运行源码和Nginx配置文件，解压后的目录与目录内原文件请勿删除！)
 
 ### CE-1.0.3
