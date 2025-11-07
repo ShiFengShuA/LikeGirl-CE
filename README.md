@@ -59,10 +59,10 @@
 ### CE-1.0.3-Patch
 - 1.修改了一些细节，功能无更新 
 - (文件 LikeGirl-CE-1.0.3-Patch.zip)
-————————
+- ————————
 - 2.新增Docker镜像，拉取代码`docker push shifengshua/likegirl-ce:1.0.3`
 - (Docker镜像仅包含‘网站源码’ / `PHP` / `PHP常用扩展`，`Nginx` / `MySQL` / `phpMyAdmin`请自行安装容器)
-————————
+- ————————
 - 3.新增Docker本地部署包，相比于Docker镜像，使用图片相对路径更容易 
 - (文件 LikeGirl-CE-1.0.3-Docker-PS.zip)
 - (Docker本地部署包需解压后，在解压目录下使用终端执行 `docker-compose up -d` 命令)
