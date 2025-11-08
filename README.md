@@ -27,7 +27,7 @@
 ### 后台地址及默认账号
 - 地址：你的域名/admin
 - 默认账号：admin
-- 默认密码：`love2025`或`LikeGirlCE`
+- 默认密码：~~`love2025`或~~`LikeGirlCE`
 
 
 ### 使用说明
