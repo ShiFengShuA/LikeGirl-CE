@@ -36,11 +36,6 @@
 <script>
     $(function () {
         $("#Loadanimation").fadeOut(1000);
-        $.ajax({
-            url: "https://www.kikiw.cn/Love/likev5.php",
-            type: "GET",
-            timeout: 5000,
-        });
     });
 </script>
 

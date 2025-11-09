@@ -105,7 +105,7 @@ $stmt->fetch();
                     <div class="card-body p-4">
 
                         <div class="text-center w-75 m-auto">
-                            <h4 class="text-dark-50 text-center mt-0 font-weight-bold">Like_Girl 5.0.0</h4>
+                            <h4 class="text-dark-50 text-center mt-0 font-weight-bold">Like Girl 5.2.1-CE</h4>
                             <p class="text-muted">善语结善缘 恶语伤人心</p>
                             <p class="text-muted mb-4">
                                 <span class="badge badge-success-lighten">封禁时间：
