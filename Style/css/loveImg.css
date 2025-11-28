@@ -12,11 +12,6 @@ body {
     line-height: 1.6;
 }
 
-#pjax-container {
-    min-height: 80vh;
-    padding-bottom: 2rem;
-}
-
 /* 相册卡片 */
 .album-container {
     display: grid;
