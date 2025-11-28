@@ -66,6 +66,10 @@
 
 ## 更新日志：
 
+### CE-1.0.5
+- 1.修复了因`loveImg.css`文件中的一个重复`#pjax-container`元素，导致的前端底部出现大片空白 (`Style/css/loveImg.css`)
+- 2.对数据库文件中的对话部分做了一些无关紧要的修改 (`DB/LikeGirl-CE_DB.sql`和`admin/install/likegirl-cd_db.sql`)
+
 ### CE-1.0.4
 - 1.细节修改与一些无关紧要更新
 
