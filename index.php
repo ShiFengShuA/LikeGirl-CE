@@ -55,7 +55,7 @@ include_once 'head.php';
                     class="card-b col-lg-6 col-12 col-sm-12 flex-h <?php if ($text['Animation'] == "1") {
                         echo 'animated fadeInUp';
                     } ?>">
-                    <img src="Style/img/card/likegirl_card_4_1.svg" alt="">
+                    <img src="Style/img/card/likegirl_card_4.svg" alt="">
                     <div class="text">
                         <span><a target="_self" href="loveImg.php">Love Photo</a></span>
                         <p>恋爱相册 记录最美瞬间</p>
