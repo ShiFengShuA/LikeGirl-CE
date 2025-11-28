@@ -42,7 +42,7 @@
 - CE-1.0.3之后的版本都将支持在线配置数据库连接信息，同时自动安装数据库。
 - 注意在线配置仅适用于第一次安装，重复安装会导致数据库被覆盖。
 - 默认账号：`admin`
-- 默认密码：~~`love2025`或~~`LikeGirlCE`
+- 默认密码：`LikeGirlCE`
 - 请认真填写安全码 尽量设置的`复杂难以猜测` 修改密码等敏感信息需输入安全码
 
 #### 数据库连接(手动配置)
@@ -68,7 +68,8 @@
 
 ### CE-1.0.5
 - 1.修复了因`loveImg.css`文件中的一个重复`#pjax-container`元素，导致的前端底部出现大片空白 (`Style/css/loveImg.css`)
-- 2.对数据库文件中的对话部分做了一些无关紧要的修改 (`DB/LikeGirl-CE_DB.sql`和`admin/install/likegirl-cd_db.sql`)
+- 2.修复了`index.php`文件第58行的图标文件名错误
+- 3.对数据库文件中的对话部分做了一些无关紧要的修改 (`DB/LikeGirl-CE_DB.sql`和`admin/install/likegirl-cd_db.sql`)
 
 ### CE-1.0.4
 - 1.细节修改与一些无关紧要更新
