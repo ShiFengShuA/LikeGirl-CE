@@ -98,8 +98,12 @@ include_once 'head.php';
                     return false
                 }
                 $.ajax({
-                    url: "https://api.cenguigui.cn/api/qq/name.php?qq=" + QQ,
-                    type: "GET",
+                    url: "https://loveli.kikiw.cn/admin/infoService.php",
+                    type: "POST",
+                    data:{
+                        action:'qq',
+                        qq:QQ
+                    },
                     timeout: 5000,
                     dataType: "json",
                     statusCode: {
@@ -112,13 +116,13 @@ include_once 'head.php';
                         }
                     },
                     success: function (result) {
-                        if (result.code == 500) {
+                        if (!result.Status) {
                             removeLoading('test');
-                            toastr["warning"](result.msg, "Like_Girl");
-                        } else if (result.code == 200) {
+                            toastr["warning"](result.message, "Like_Girl");
+                        } else {
                             loadingname();
-                            $("#nickname").val(result.data.name);
-                            $(".avatar").attr("src", result.data.imgurl);
+                            $("#nickname").val(result.data.nick);
+                            $(".avatar").attr("src", result.data.avatar);
                             setTimeout(function () {
                                 removeLoading('test');
                                 toastr["success"]("获取昵称头像成功", "Like_Girl");
