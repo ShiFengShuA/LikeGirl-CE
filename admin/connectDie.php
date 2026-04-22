@@ -84,7 +84,7 @@
                             <div class="info">请检查数据库信息是否配置正确<i style="color: #ff9b9b;"></i></div>
                         </div>
                         <div class="text-center w-75 m-auto" style="margin-bottom: 40px!important;">
-                            <img src="http://sfsa.mrgzs.top/repository/LikeGirl-CE/img/LikeGirl-CE-SQL-TiaoShi.png"
+                            <img src="/Style/img/LikeGirl-CE-SQL-TiaoShi.png"
                                  style="width: 100%;border-radius: 10px;box-shadow: 0 5px 12px #b9c7dc;" alt="">
                         </div>
                         <div class="text-center info">请在admin目录下找到Config_DB.php文件 并按图手动修改内容</div>

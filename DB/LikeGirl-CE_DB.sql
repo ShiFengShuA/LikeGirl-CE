@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.3
 -- https://www.phpmyadmin.net/
 --
--- 主机： localhost:3306
--- 生成日期： 2025-11-28 18:41:03
--- 服务器版本： 5.6.51
+-- 主机： localhost
+-- 生成日期： 2026-04-22 21:01:50
+-- 服务器版本： 5.7.44-log
 -- PHP 版本： 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 数据库： `LikeGirl-CE`
+-- 数据库： `likegirl-ce`
 --
 
 -- --------------------------------------------------------
@@ -208,7 +208,7 @@ INSERT INTO `loveImg` (`id`, `imgDatd`, `imgText`, `imgUrl`) VALUES
 (32, '2025-09-18', '测试5张图片时卡片样式(相对路径)', './Style/img/bgCover.png;./Style/img/bgCover.png;./Style/img/bgCover.png;./Style/img/bgCover.png;./Style/img/bgCover.png'),
 (33, '2025-09-18', '测试9张图片时卡片样式(相对路径)', './Style/img/bgCover.png;./Style/img/bgCover.png;./Style/img/bgCover.png;./Style/img/bgCover.png;./Style/img/bgCover.png;./Style/img/bgCover.png;./Style/img/bgCover.png;./Style/img/bgCover.png;./Style/img/bgCover.png'),
 (34, '2025-09-18', '测试多张照片时卡片样式(URL地址)', 'https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png;https://lovey.kikiw.cn/Style/img/bgCover.png'),
-(35, '2025-09-18', '情侣小站社区维护版上线了！', 'http://sfsa.mrgzs.top/repository/LikeGirl-CE/img/1758202273000.png');
+(35, '2025-09-18', '情侣小站社区维护版上线了！', '/Style/img/Love-album/1758202273000.png');
 
 -- --------------------------------------------------------
 
