@@ -67,6 +67,10 @@
 
 ## 更新日志：
 
+### CE-1.0.6
+- 将`admin/connectDie.php`中修改教程图片的资源调用改为了绝对路径，不再使用URL
+- 将`恋爱相册`界面后端数据库`admin/install/likegirl-cd_db.sql`和`DB/likegirl-cd_db.sql`中对应的`情侣小站社区维护版上线了！`卡片所使用的图片资源调用改为绝对路径，不再使用URL
+
 ### CE-1.0.5-Patch
 - 同步官方BUG修复
 - (移除`admin/Nav.php`第21行多余空格)
